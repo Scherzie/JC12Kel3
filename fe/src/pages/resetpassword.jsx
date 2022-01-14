@@ -19,6 +19,7 @@ const ResetPassword = (props) =>{
     const dataOnChange = (e) => {
         e.preventDefault()
         setdata({...data,[e.target.name]:e.target.value})
+        console.log(data)
     }
 
     useEffect(()=>{
@@ -45,7 +46,7 @@ const ResetPassword = (props) =>{
             password:data.password,
             confirmpassword:data.confirmpassword
         }
-        console.log(data.username)
+        console.log(data.password)
         props.resetPass(obj)
         console.log(obj)
     }
@@ -63,8 +64,8 @@ const ResetPassword = (props) =>{
                         <p className="h5 text-center mb-4">Reset Password</p>
                         <div className="grey-text">
                             <MDBInput label="Your username" icon="user" group type="text" name='username' outline value={data.username} onChange={dataOnChange} validate error='dsadas'/>
-                            <MDBInput label="Your new password" icon="lock" group type="password" outline value={data.password} onChange={dataOnChange} validate error='dsadas'/>
-                            <MDBInput label="Confirm new password" icon="exclamation-triangle" group type="password" outline value={data.confirmpassword} onChange={dataOnChange} validate error='dsadas'/>
+                            <MDBInput label="Your new password" icon="lock" group type="password" name='password' outline value={data.password} onChange={dataOnChange} validate error='dsadas'/>
+                            <MDBInput label="Confirm new password" icon="exclamation-triangle" name='confirmpassword' group type="password" outline value={data.confirmpassword} onChange={dataOnChange} validate error='dsadas'/>
                             {
                                 props.Auth.errormesres === ''?
                                 null

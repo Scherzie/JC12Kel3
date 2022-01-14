@@ -1,9 +1,6 @@
 import React, {Component, Fragment} from 'react'
-import {
-    Card, CardBody,
-    CardTitle, CardSubtitle, Spinner
-  } from 'reactstrap';
-  import { MDBPagination, MDBPageItem, MDBPageNav, MDBCol, MDBRow ,MDBBtn } from "mdbreact";
+import { Card, CardBody, CardTitle, CardSubtitle, Spinner} from 'reactstrap';
+import { MDBPagination, MDBPageItem, MDBPageNav, MDBCol, MDBRow ,MDBBtn } from "mdbreact";
 import Axios from 'axios'
 import { API_URL } from '../supports/Apiurl';
 import Numeral from 'numeral'

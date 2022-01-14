@@ -134,7 +134,7 @@ module.exports={
     forgotpassword:(req,res)=>{
         const {email,username}=req.body
         var token=createJWTToken({email:email})
-        var forgotPasswordLink=`http://localhost:3000/resetpassword?token=${token}`
+        var forgotPasswordLink=`http://localhost:3000/resetpassword/token=${token}`
         var maildata={
             from: 'Admin <ardiani.bernhard@gmail.com>',
             to: email,
@@ -152,7 +152,6 @@ module.exports={
         }) 
     },
     forgotpasswordverified:(req,res) => {
-        console.log(req.user, 'this is req.user')
         const {email} = req.user
         return res.status(200).send(email)
     },

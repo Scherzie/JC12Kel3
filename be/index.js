@@ -1,9 +1,10 @@
+require('dotenv').config()
 const express=require('express')
 const bodyParser=require('body-parser')
 const app=express()
 const cors=require('cors')
 const bearertoken=require('express-bearer-token')
-const PORT=5000
+const port = process.env.SERVER_PORT || 5000;
 
 app.use(cors())
 app.use(bearertoken())
@@ -21,5 +22,9 @@ app.use('/users',AuthRouters)
 app.use('/product',ProductRouters)
 app.use('/transaction',TransactionRouters)
 
-app.listen(PORT,()=>console.log('server is running on '+PORT))
+app.listen(port,()=>console.log(`
+***************************
+server started on port ${port}
+***************************
+`))
 

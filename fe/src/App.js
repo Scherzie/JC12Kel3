@@ -9,6 +9,7 @@ import {connect} from 'react-redux';
 import Axios from'axios'
 import Header from './components/header'
 import Home from './pages/home'
+import AboutUs from './pages/aboutus'
 import Notfound from './pages/notfound'
 import {API_URL} from './supports/Apiurl';
 import ManageAdmin from './pages/manageproduct'
@@ -62,6 +63,7 @@ const App = (({KeepLogin}) =>{
       <ScrollToTop />
       <Switch>
       <Route path="/" component={Home} exact />
+      <Route path="/aboutus" component={AboutUs} exact />
       <Route path="/register" exact component={Register}/>
       <Route path="/verified" exact component={Verified}/>
       <Route path="/sendverified" exact component={SendVerified}/>
@@ -72,7 +74,6 @@ const App = (({KeepLogin}) =>{
       <Route path="/manageorder" exact component={ManageOrder}/>
       <Route path="/productdetail/:idprod" exact component={ProductDetail}/>
       <Route path="/cart" exact component={Cart}/>
-      <Route path="/checkout" exact component={Checkout}/>
       <Route path="/checkout" exact component={Checkout}/>
       <Route path="/transaction/:transactionId" exact component={Transaction}/>
       <Route path="/admintransaction/:transactionId" exact component={AdminTransaction}/>
